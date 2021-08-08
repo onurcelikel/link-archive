@@ -102,8 +102,8 @@ export default {
         if (vote1.point > vote2.point) return this.order ? -1 : 1;
         if (vote1.point < vote2.point) return this.order ? 1 : -1;
 
-        if (vote1.time > vote2.time) return this.order ? 1 : -1;
-        if (vote1.time < vote2.time) return this.order ? -1 : 1;
+        if (vote1.time > vote2.time) return this.order ? -1 : 1;
+        if (vote1.time < vote2.time) return this.order ? 1 : -1;
       });
     },
     selectPage(val) {

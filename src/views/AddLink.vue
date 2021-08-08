@@ -10,7 +10,7 @@
           ref="linkName"
           type="text"
           placeholder="e.g. Alphabet"
-          class="textbox"
+          class="textbox  link-name"
           :class="{ error: $v.form.linkName.$error }"
           @keyup.enter="addLink"
         />
@@ -27,7 +27,7 @@
           v-model="form.linkUrl"
           type="text"
           placeholder="http://abc.xyz"
-          class="textbox"
+          class="textbox link-url"
           :class="{ error: $v.form.linkUrl.$error }"
           @keyup.enter="addLink"
         />
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import SnackBar from "@/components/SnackBar";
 import { required } from "vuelidate/lib/validators";
 const isUrl = (value) => {
   const expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
@@ -62,7 +63,6 @@ const isUrl = (value) => {
   return regex.test(value);
 };
 
-import SnackBar from "@/components/SnackBar";
 var dayjs = require("dayjs");
 
 export default {
